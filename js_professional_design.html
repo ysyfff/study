@@ -122,6 +122,36 @@ var docHeight = Math.max(document.documentElement.scrollHeight,
 						 document.documentElement.clientHeight);
 var docWidth = Math.max(document.documentElement.scrollWidth,
 						 document.documentElement.clientWidth);
+
+/*
+DOM0
+*/
+document.getElementById('he').onclick=function(){
+	alert(this.id); //this means document.getElementId('he')
+}
+/*
+DOM2
+*/
+var $ = {
+	addHandler: function(el, ty, hl){
+		if(el.addEventListener){
+			el.addEventListener(ty, hl, false);//false mean 冒泡阶段处理事件
+		}else if(el.attachEvent){
+			el.attachEvent('on'+ty, hl);
+		}else{
+			el['on'+type] = hl;
+		}
+	},
+	rmHandler: function(el, ty, hl){
+		if(el.removeEventListener){
+			el.removeEventListener(ty, hl, false);
+		}else if(el.detachEvent){
+			el.detachEvent('on'+type, hl);
+		}else{
+			el['on'+ty] = null;
+		}
+	}
+};
 </script>
 </body>
 </html>
