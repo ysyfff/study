@@ -4,6 +4,20 @@
 <body>
 <script type="text/javascript">
 //windown-->BOM's Core-->EMCAScript's Global and JS's interface for brower
+
+</script>
+<script type="text/javascript">
+//DOM
+
+/*
+node
+ELEMENT_NODE 1
+ATTRIBUTE_NODE 2
+TEXT_NODE 3
+CDATA_SECTION_NODE 4
+DOCUMENT_NODE 9
+
+*/
 function converToArray(nodes){ //convert nodelist to array
 	var array = null;
 	try{
@@ -16,9 +30,46 @@ function converToArray(nodes){ //convert nodelist to array
 	}
 	return array;
 }
-</script>
-<script type="text/javascript">
-//DOM
+/*
+document 
+-->nodetype 9
+document.documentElement; //html
+document.body;            //body
+document.doctype;         //doctype
+document.title;           //title
+document.URL;
+document.domain;
+document.getElementById;
+*/
+/*
+element 
+-->nodetype 1
+(div.tagName = div.nodeName).toLowerCase() = "DIV"
+div.id
+div.className
+div.title
+div.lang
+div.dir
+div.getAttribute('id')
+div.setAttribute('id', 'hehe');
+element.attributes['id'].nodeValue = element.attributes.getNamedItem('id').nodeValue
+*/
+function outputAttributes(el){
+	var pairs = new Array(),
+		attrName,
+		attrValue,
+		i,
+		len;
+
+	for(i=0, len=el.attributes.length; i<len; i++){
+		attrNmae = el.attributes[i].nodeName;
+		attrValue = el.attributes[i].nodeValue;
+		if(el.attributes.specified){ //for ie7
+			pairs.push(attrName + "=\"" + attrValue + "\"");
+		}
+	}
+	return pairs.join(" ");
+}
 </script>
 </body>
 </html>
