@@ -54,7 +54,7 @@ div.getAttribute('id')
 div.setAttribute('id', 'hehe');
 element.attributes['id'].nodeValue = element.attributes.getNamedItem('id').nodeValue
 */
-function outputAttributes(el){
+function outputAttributes(el){ //
 	var pairs = new Array(),
 		attrName,
 		attrValue,
@@ -69,6 +69,12 @@ function outputAttributes(el){
 		}
 	}
 	return pairs.join(" ");
+}
+//check text node
+for(var i=0, len=element.childNodes.length; i<len; i++){
+	if(element.childNodes[i].nodeType==1){ //conform that it is an element
+		//do something
+	}
 }
 </script>
 </body>
