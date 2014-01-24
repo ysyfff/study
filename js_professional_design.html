@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+//windown-->BOM's Core-->EMCAScript's Global and JS's interface for brower
+function converToArray(nodes){ //convert nodelist to array
+	var array = null;
+	try{
+		array = Array.prototype.slice.call(nodes, 0);
+	}catch(ex){
+		array = new Array();
+		for(var i=0, len=nodes.length; i<len; i++){
+			array.push(nodes[i]);
+		}
+	}
+	return array;
+}
+</script>
+<script type="text/javascript">
+//DOM
+</script>
+</body>
+</html>
