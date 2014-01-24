@@ -104,6 +104,19 @@ function getElementTop(el){ //get el's top offset
 		current = current.offsetParent;
 	}
 }
+function getViewport(){
+	if(document.compatMode == 'BackCompat'){
+		return { //quirk mode
+			width:document.body.clientWidth,
+			height: document.body.clientHeight
+		}else{ //standard mode
+			return {
+				width: document.documentElement.clientWidth,
+				height: document.documentElement.clientHeight
+			}
+		}
+	}
+}
 </script>
 </body>
 </html>
