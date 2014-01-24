@@ -84,6 +84,26 @@ div.style.height = "200px";
 div.style.border = "1px solid blue";
 div.style.cssText ="width:10px;height:20px;";
 */
+function getElementLeft(el){ //get el's left offset
+	var actualLeft = el.offsetLeft;
+	var current = el.offsetParent;
+
+	while(current !== null){
+		actualLeft += current.offsetLeft;
+		current = current.offsetParent;
+	}
+
+	return actualLeft;
+}
+function getElementTop(el){ //get el's top offset
+	var actualTop = el.offsetTop;
+	var current = el.offsetParent;
+
+	while(current !== null){
+		actualTop += current.offsetTop;
+		current = current.offsetParent;
+	}
+}
 </script>
 </body>
 </html>
