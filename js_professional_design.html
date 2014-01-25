@@ -391,6 +391,9 @@ $.addHandler(window, 'beforeunload', function(e){
 	e.returnValue = msg;
 	return msg;
 });
+$.addHandler(document, 'DOMContentLoaded', function(e){
+	alert('Content loaded');
+})
 </script>
 </body>
 </html>
