@@ -200,7 +200,7 @@ var $ = {
 					return 1;
 			}
 		}
-	}
+	},
 };
 //13.2.5 跨浏览器的事件处理程序
 //page 355
@@ -338,7 +338,10 @@ $.addHandler(div, 'click', function(e){
 	}
 	alert('Keys: '+keys.join(','));
 });
-
+$.addHandler(document, 'mousewheel', function(e){
+	e = $.getEvent(e);
+	alert(e.wheelDelta);
+});
 </script>
 </body>
 </html>
