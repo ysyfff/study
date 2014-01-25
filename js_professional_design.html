@@ -219,7 +219,13 @@ $.addHandler(window, 'load', function(){
 		alert($.getTarget(e).src);
 	})
 });
-
+/*
+UI event
+unload
+*/
+$.addHandler(window, 'unload', function(e){
+	alert('Unloaded');
+});
 </script>
 </body>
 </html>
