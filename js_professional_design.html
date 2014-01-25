@@ -385,6 +385,12 @@ $.addHandler(window, 'load', function(e){
 		menu.style.visibility = 'visible';
 	});
 });
+$.addHandler(window, 'beforeunload', function(e){
+	e = $.getEvent(e);
+	var msg = "I'm really going to miss you if you go!";
+	e.returnValue = msg;
+	return msg;
+});
 </script>
 </body>
 </html>
