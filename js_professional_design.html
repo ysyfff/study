@@ -269,7 +269,20 @@ mouseover
 */
 $.addHandler(div, 'click', function(e){
 	e = $.getEvent(e);
-	alert(e.clientX, e.clientY); //click position
+	alert('clinet coordinates',e.clientX, e.clientY); //click position
+});
+
+$.addHandler(div, 'click', function(e){
+	e = $.getEvent(e);
+	var pageX = e.pageX,
+		pageY = e.pageY;
+	if(pageX === undefined){
+		pageX = e.clientX+(document.body.scrollLeft || document.documentElement.scrollLeft);
+	}
+	if(pageY === undefined){
+		pageY = e.clientY+(document.body.scrollTop || document.documentElement.scrollTop);
+	}
+	alert("page coordinates: " + pageX + "," + pageY)
 })
 </script>
 </body>
