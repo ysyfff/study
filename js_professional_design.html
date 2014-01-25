@@ -283,7 +283,14 @@ $.addHandler(div, 'click', function(e){
 		pageY = e.clientY+(document.body.scrollTop || document.documentElement.scrollTop);
 	}
 	alert("page coordinates: " + pageX + "," + pageY)
-})
+});
+
+$.addHandler(div, 'click', function(e){
+	e = $.getEvent(e);
+	alert('Screen corrdinates: ', e.screenX, e.screenY);
+});
+
+
 </script>
 </body>
 </html>
