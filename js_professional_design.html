@@ -393,6 +393,9 @@ $.addHandler(window, 'beforeunload', function(e){
 });
 $.addHandler(document, 'DOMContentLoaded', function(e){
 	alert('Content loaded');
+});
+$.addHandler(window, 'hashchange', function(e){
+	alert('old url: '+e.oldURL +'\n new URL: '+e.newURL);
 })
 </script>
 </body>
