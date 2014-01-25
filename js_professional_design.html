@@ -290,7 +290,24 @@ $.addHandler(div, 'click', function(e){
 	alert('Screen corrdinates: ', e.screenX, e.screenY);
 });
 
+$.addHandler(div, 'click', function(e){
+	e = $.getEvent(e);
+	var keys = new Array();
 
+	if(e.shiftKey){
+		keys.push('shift');
+	}
+	if(e.ctrlKey){
+		keys.push('ctrl');
+	}
+	if(e.altKey){
+		keys.push('alt');
+	}
+	if(e.metaKey){
+		keys.push('meta');
+	}
+	alert('Keys: '+keys.join(','));
+});
 </script>
 </body>
 </html>
