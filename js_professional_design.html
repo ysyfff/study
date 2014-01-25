@@ -201,6 +201,13 @@ var $ = {
 			}
 		}
 	},
+	getCharCode: function(e){
+		if(typeof e.charCode == 'number'){
+			return e.charCode;
+		}else{
+			return e.keyCode;
+		}
+	}
 };
 //13.2.5 跨浏览器的事件处理程序
 //page 355
@@ -346,7 +353,10 @@ $.addHandler(textbox, 'keyup', function(e){
 	e = $.getEvent(e);
 	alert(e.keyCode);
 });
-
+$.addHandler(textbox, 'textinput', function(e){
+	e = $.getEvent(e);
+	alert(e.data);
+});
 </script>
 </body>
 </html>
