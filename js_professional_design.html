@@ -357,6 +357,18 @@ $.addHandler(textbox, 'textinput', function(e){
 	e = $.getEvent(e);
 	alert(e.data);
 });
+$.addHandler(textbox, 'compositionstart', function(e){
+	e = $.getEvent(e);
+	alert(e.data);
+});
+$.addHandler(textbox, 'compositionupdate', function(e){
+	e = $.getEvent(e);
+	alert(e.data);
+});
+$.addHandler(textbox, 'compositionend', function(e){
+	e = $.getEvent(e);
+	alert(e.data);
+});
 </script>
 </body>
 </html>
