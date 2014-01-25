@@ -342,6 +342,11 @@ $.addHandler(document, 'mousewheel', function(e){
 	e = $.getEvent(e);
 	alert(e.wheelDelta);
 });
+$.addHandler(textbox, 'keyup', function(e){
+	e = $.getEvent(e);
+	alert(e.keyCode);
+});
+
 </script>
 </body>
 </html>
