@@ -154,6 +154,12 @@ var $ = {
 };
 //13.2.5 跨浏览器的事件处理程序
 //page 355
+var link = document.getElementById('link');
+link.onclick = function(e){
+	e.preventDefault(); //cancel event's default method
+	alert('hehe');
+	e.stopPropagation(); //cancel event's propagation or event's grap
+}
 </script>
 </body>
 </html>
