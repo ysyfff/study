@@ -3,7 +3,7 @@
 </head>
 <body>
 <script type="text/javascript">
-//windown-->BOM's Core-->EMCAScript's Global and JS's interface for brower
+//window-->BOM's Core-->EMCAScript's Global and JS's interface for brower
 
 </script>
 <script type="text/javascript">
@@ -149,6 +149,26 @@ var $ = {
 			el.detachEvent('on'+type, hl);
 		}else{
 			el['on'+ty] = null;
+		}
+	},
+	getEvent: function(e){
+		return e ? e : window.event;
+	},
+	getTarget: function(e){
+		return e.target || e.srcElement;
+	},
+	preventDefault: function(e){
+		if(e.preventDefault){
+			e.preventDefault();
+		}else{
+			e.returnValue = false;
+		}
+	},
+	stopPropagation: function(e){
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
 		}
 	}
 };
