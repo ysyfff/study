@@ -202,6 +202,24 @@ document.body.addEventListener('click', function(e){
 document.body.onclick = function(e){
 	alert(e.eventPhase); //3
 }
+/*
+UI event
+load
+*/
+$.addHandler(window, 'load', function(e){
+	alert('Loaded'); //include css, js and img
+});
+$.addHandler(document.getElementById('img'), 'load', function(e){
+	alert('img was loaded!');
+});
+$.addHandler(window, 'load', function(){
+	var img = document.createElement('img');
+	$.addHandler(img, 'load', function(e){
+		e = $.getEvent(e);
+		alert($.getTarget(e).src);
+	})
+});
+
 </script>
 </body>
 </html>
