@@ -266,8 +266,11 @@ mouseleave //no bubble
 mousemove
 mouseout
 mouseover
-
 */
+$.addHandler(div, 'click', function(e){
+	e = $.getEvent(e);
+	alert(e.clientX, e.clientY); //click position
+})
 </script>
 </body>
 </html>
