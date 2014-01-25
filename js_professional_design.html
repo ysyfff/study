@@ -369,6 +369,13 @@ $.addHandler(textbox, 'compositionend', function(e){
 	e = $.getEvent(e);
 	alert(e.data);
 });
+$.addHandler(window, 'load', function(e){
+	var list = document.getElementById('myList');
+	$.addHandler(document, 'DOMSubtreeModified', function(e){
+		aleft(e.type);
+		alert(e.target);
+	});
+});
 </script>
 </body>
 </html>
