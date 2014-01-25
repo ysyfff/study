@@ -375,6 +375,15 @@ $.addHandler(window, 'load', function(e){
 		aleft(e.type);
 		alert(e.target);
 	});
+	$.addHandler(div, 'contextmenu', function(e){
+		e = $.getEvent(e);
+		$.preventDefault(e);
+
+		var menu=document.getElementById('myMenu');
+		menu.style.left = e.clientX + 'px';
+		menu.style.top = e.clientY + 'px';
+		menu.style.visibility = 'visible';
+	});
 });
 </script>
 </body>
